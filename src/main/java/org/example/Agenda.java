@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.*;
 
-public class Agenda {
+public class Agenda implements AgendaS {
     private List<Persona> contacts; /** Lista de Contacto */
 
     /** Constructor de la clase Agenda */
@@ -11,6 +11,7 @@ public class Agenda {
     }
 
     /** Método para agregar un contacto a la agenda */
+    @Override
     public void addContact(String name, String phone) {
         boolean exists = false; /** Variable para verificar si el contacto ya existe */
 
@@ -31,6 +32,7 @@ public class Agenda {
     }
 
     /** Método para eliminar un contacto de la agenda */
+    @Override
     public void removeContact(String name) {
         Iterator<Persona> it = contacts.iterator();
 
@@ -46,6 +48,7 @@ public class Agenda {
     }
 
     /** Método para modificar el número de teléfono de un contacto */
+    @Override
     public void modifyPhoneNumber(String name, String oldPhone, String newPhone) {
         for (Persona c : contacts) {
             if (c.getName().equalsIgnoreCase(name)) {
@@ -63,6 +66,7 @@ public class Agenda {
     }
 
     /** Método para obtener la lista de contactos */
+    @Override
     public List<Persona> getContacts() {
         return this.contacts;
     }
