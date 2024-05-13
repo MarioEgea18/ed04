@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Contacto {
-    private String name; /** Nombre del contacto */
+    private String name;
     private List<String> phones; /** Lista de números de teléfono del contacto */
 
     /** Constructor de la clase Contacto */
     public Contacto(String name, String phone) {
-        this.name = name; /** Asigna el nombre del contacto */
-        this.phones = new ArrayList<>(); /** Inicializa la lista de números de teléfono */
-        this.phones.add(phone); /** Agrega el número de teléfono al contacto */
+        this.setName(name); /** Asigna el nombre del contacto */
+        this.setPhones(new ArrayList<>()); /** Inicializa la lista de números de teléfono */
+        this.getPhones().add(phone); /** Agrega el número de teléfono al contacto */
     }
 
     /** Método para obtener el nombre del contacto */
@@ -19,8 +19,16 @@ public class Contacto {
         return this.name;
     }
 
-    /** Método para obtener la lista de números de teléfono del contacto */
+    /** Nombre del contacto */ /** Método para obtener la lista de números de teléfono del contacto */
     public List<String> getPhones() {
         return this.phones;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPhones(List<String> phones) {
+        this.phones = phones;
     }
 }
