@@ -3,7 +3,7 @@ package org.example;
 import java.util.*;
 
 public class Agenda {
-    private List<Contacto> contacts; /** Lista de Contacto */
+    private List<Persona> contacts; /** Lista de Contacto */
 
     /** Constructor de la clase Agenda */
     public Agenda() {
@@ -15,7 +15,7 @@ public class Agenda {
         boolean exists = false; /** Variable para verificar si el contacto ya existe */
 
         /** Itera sobre la lista de contactos para verificar si ya existe un contacto con el mismo nombre */
-        for (Contacto c : contacts) {
+        for (Persona c : contacts) {
             if (c.getName().equalsIgnoreCase(name)) {
                 exists = true; /** Si ya existe */
                 c.getPhones().add(phone); /** Agrega el número de teléfono al contacto existente */
@@ -25,18 +25,18 @@ public class Agenda {
 
         /** Si el contacto no existe, crea uno nuevo y lo agrega a la lista */
         if (!exists) {
-            Contacto newContact = new Contacto(name, phone);
+            Persona newContact = new Persona(name, phone);
             contacts.add(newContact);
         }
     }
 
     /** Método para eliminar un contacto de la agenda */
     public void removeContact(String name) {
-        Iterator<Contacto> it = contacts.iterator();
+        Iterator<Persona> it = contacts.iterator();
 
         /** Itera sobre la lista de contactos */
         while (it.hasNext()) {
-            Contacto c = it.next();
+            Persona c = it.next();
 
             /** Si encuentra un contacto con el mismo nombre, lo elimina */
             if (c.getName().equalsIgnoreCase(name)) {
@@ -47,7 +47,7 @@ public class Agenda {
 
     /** Método para modificar el número de teléfono de un contacto */
     public void modifyPhoneNumber(String name, String oldPhone, String newPhone) {
-        for (Contacto c : contacts) {
+        for (Persona c : contacts) {
             if (c.getName().equalsIgnoreCase(name)) {
                 List<String> phones = c.getPhones();
 
@@ -63,7 +63,7 @@ public class Agenda {
     }
 
     /** Método para obtener la lista de contactos */
-    public List<Contacto> getContacts() {
+    public List<Persona> getContacts() {
         return this.contacts;
     }
 }

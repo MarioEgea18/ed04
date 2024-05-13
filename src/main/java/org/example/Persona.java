@@ -3,12 +3,12 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Contacto {
+public class Persona {
     private String name;
     private List<String> phones; /** Lista de números de teléfono del contacto */
 
     /** Constructor de la clase Contacto */
-    public Contacto(String name, String phone) {
+    public Persona(String name, String phone) {
         this.setName(name); /** Asigna el nombre del contacto */
         this.setPhones(new ArrayList<>()); /** Inicializa la lista de números de teléfono */
         this.getPhones().add(phone); /** Agrega el número de teléfono al contacto */
